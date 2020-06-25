@@ -65,10 +65,6 @@ nunjucks.configure("views", {
     noCache: true, 
 })
 
-
-
-
-
 //criei uma rota/
 //e capturo o pedido do cliente para responder
 server.get("/", function(req, res){
