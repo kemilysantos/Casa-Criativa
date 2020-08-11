@@ -52,9 +52,9 @@
 
 <section id="last-ideias">
 
-    {%  for idea in ideas   %}
+    {%  for idea in ideas %}
         <div class="idea">
-            <img src="{{idea.img}}" 
+            <img src="{{idea.image}}" 
             alt="Imagem de {{idea.title}}">
 
             <div class="content">
@@ -63,7 +63,7 @@
                 <div class="description">
                     {{idea.description}}
                 </div>
-                <a href="{{idea.url}}">Ir para a Ideia</a>
+                <a href="{{idea.link}}">Ir para a Ideia</a>
         </div>
     </div>
 

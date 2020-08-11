@@ -1,5 +1,6 @@
+const { Database } = require('sqlite3')
 const sqlite3 = require('sqlite3').verbose()
-const db = new sqlite3.Database('./Casa-Criativa.db')
+const db = new sqlite3.Database('./C-Criativa.db')
 
 db.serialize(function(){
     //criar a tabela
@@ -15,29 +16,29 @@ db.serialize(function(){
         );
     `)
 
-    //const query = `
-    //INSERT INTO ideas(
-        //image,
-        //title,
-        //category,
-        //description,
-        //link
-    //) VALUES (?,?,?,?,?);
-    //`
+    const query = `
+    INSERT INTO ideas(
+        image,
+        title,
+        category,
+        description,
+        link
+    ) VALUES (?,?,?,?,?);
+    `
     
-    //const values = [
-        //"https://image.flaticon.com/icons/svg/2729/2729007.svg",
-        //"Cursos de Programação",
-        //"Estudo",
-        //"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi alias ipsum, fugiat sed",
-        //"https://rocketseat.com.br"
-    //]
+    const values = [
+    "https://image.flaticon.com/icons/svg/2729/2729007.svg",
+    "Cursos de Programação",
+    "Estudo",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi alias ipsum, fugiat sed",
+    "https://rocketseat.com.br"
+    ]
 
-    //db.run(query, values, function(err){
-        //if (err) return console.log(err)
+    db.run(query, values, function(err){
+        if (err) return console.log(err)
 
-        //console.log(this)
-    //})
+        console.log(this)
+    })
 
     //db.run(`DELETE FROM ideas WHERE id = ?`, [1], function(err){
        //if (err) return console.log(err)
